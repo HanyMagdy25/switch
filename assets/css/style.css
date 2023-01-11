@@ -1779,7 +1779,7 @@ p {
   display: none;
 }
 .back-to-top:hover {
-  background-color: rgba(8, 152, 231, 0.5);
+  background-color: var(--main-green-color-hover);
   color: #fff;
 }
 /* ===== Swiper ===== */
@@ -1821,11 +1821,11 @@ p {
 }
 
 /* Card in Swiper */
-.about-area .swiper-div{
+.about-area .swiper-div {
   padding: 63px 0px;
   /* background-color: #222; */
 }
-.about-area .swiper-div .swiper{
+.about-area .swiper-div .swiper {
   padding: 5px 0;
 }
 .about-area .card {
@@ -1839,8 +1839,10 @@ p {
   object-fit: contain !important;
 }
 .about-area .card:hover {
-  box-shadow: 0px 15px 17px 0px rgb(154 154 154 / 16%);
+  box-shadow: 0px 15px 17px 0px rgb(154 154 154 / 16%),
+    -2px -2px 29px 0px rgb(154 154 154 / 16%);
 }
+
 .about-area .card-img-top {
   height: 300px;
 }
@@ -1850,9 +1852,7 @@ p {
   align-items: center;
   justify-content: space-between;
 }
-.about-area .card-body .card-title{
-  
-}
-.about-area .card-body .card-text{
-  
+.about-area .card-body .card-title {
+  font-size: 20px;
+  /* font-weight: 500; */
 }
