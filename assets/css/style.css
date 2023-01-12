@@ -19,10 +19,11 @@
 /*===========================
       01.COMMON css 
 ===========================*/
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 :root {
   --main-green-color: #3cb34d;
   --main-green-color-hover: #3d8d47;
-}
+} */
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700&display=swap");
 body {
@@ -79,7 +80,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-weight: 700;
   color: #38424d;
   margin: 0px;
@@ -686,6 +687,11 @@ p {
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
   top: -7px;
+}
+.lang-custom{
+  /* border: none; */
+    background: transparent !important;
+    color: #000!important;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1829,7 +1835,7 @@ p {
   padding: 5px 0;
 }
 .about-area .card {
-  height: 550px;
+  height: 580px;
   width: 100%;
   /* box-shadow: 0px 15px 17px 0px rgb(154 154 154 / 16%); */
   border: none !important;
@@ -1855,4 +1861,13 @@ p {
 .about-area .card-body .card-title {
   font-size: 20px;
   /* font-weight: 500; */
+}
+@media screen and (max-width: 500px) {
+  .about-area .card {
+    height: unset;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 22px !important;
+  }
 }

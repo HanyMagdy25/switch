@@ -110,6 +110,9 @@ $(function () {
   new WOW().init();
 
   //   my Js Flores
+  function truncate(string, n) {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  }
   const cardsData = [
     {
       id: 1,
@@ -147,7 +150,7 @@ $(function () {
       id: 5,
       title: "first title flores",
       content:
-      "Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor comprehensam at vis. Vel ut percipitur dignissim signiferumque.",
+        "Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor comprehensam at vis. Vel ut percipitur dignissim signiferumque.",
       image:
         "https://res.cloudinary.com/dia1kfg4m/image/upload/v1673438535/image_7_y4tzoo.png",
     },
@@ -155,27 +158,34 @@ $(function () {
       id: 6,
       title: "second title flores",
       content:
-      "Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor comprehensam at vis. Vel ut percipitur dignissim signiferumque.",
+        "Alii nusquam cu duo, vim eu consulatu percipitur, meis dolor comprehensam at vis. Vel ut percipitur dignissim signiferumque.",
       image:
         "https://res.cloudinary.com/dia1kfg4m/image/upload/v1673438535/image_6_hzoqzy.png",
     },
   ];
 
-  const myContent = document.querySelector(".swiper-card-div");
-
-  const showInHtml = cardsData.map((item, index) => {
-    return `
-    <div class="swiper-slide">
-        <div class="card" data-wow-duration="1.3s" data-wow-delay="0.2s">
-            <img class="card-img-top" src=${item.image} alt=${item.title}>
-            <div class="card-body">
-                <h5 class="card-title">${item.title}</h5>
-                <p class="card-text">${item.content}</p>
-                <a href="#" class="btn main-btn">Purchase</a>
-            </div>
-        </div>
-    </div> `;
-  });
-
-  myContent.innerHTML = showInHtml;
+  fetch("https://fakestoreapi.com/products")
+    .then((data) => {
+      return data.json();
+    })
+    .then((res) => {
+      // console.log("res", res);
+      let data1 = "";
+      res.map((item) => {
+        data1 += ` <div class="swiper-slide">
+      <div class="card" data-wow-duration="1.3s" data-wow-delay="0.2s">
+          <img class="card-img-top" src=${item.image} alt=${item.title}>
+          <div class="card-body">
+              <h5 class="card-title">${item.title}</h5>
+              <p class="card-text">${truncate(item.description, 140)}</p>
+              <a href="#" class="btn main-btn">Purchase</a>
+          </div>
+      </div>
+  </div> `;
+      });
+      document.querySelector(".swiper-card-div").innerHTML = data1;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
