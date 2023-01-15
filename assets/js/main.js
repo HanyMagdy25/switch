@@ -1,3 +1,5 @@
+import translations from "./translitions.js";
+
 $(function () {
   "use strict";
 
@@ -189,3 +191,31 @@ $(function () {
       console.log(err);
     });
 });
+
+// To Change Language
+
+const languageSelector = document.querySelector("select");
+languageSelector.addEventListener("change", (e) => {
+  setLanguage(e.target.value);
+  localStorage.setItem("lang", e.target.value);
+});
+document.addEventListener("DOMContentLoaded",() => {
+  // const language = localStorage.getItem("lang");
+  setLanguage(localStorage.getItem("lang"))
+})
+const setLanguage = (language) => {
+  const elements = document.querySelectorAll("[data-i18n]");
+  elements.forEach((element) => {
+    const translitionKey = element.getAttribute("data-i18n");
+    element.textContent = translations[language][translitionKey];
+  });
+  if (language === "ar") {
+    document.dir = "rtl";
+    document.getElementsByTagName("body")[0].style.fontFamily =
+      "'Cairo', sans-serif";
+  } else {
+    document.dir = "ltr";
+    document.getElementsByTagName("body")[0].style.fontFamily =
+      "'Open Sans', sans-serif";
+  }
+};

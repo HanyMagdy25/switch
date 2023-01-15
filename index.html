@@ -104,18 +104,30 @@
                 >
                   <ul id="nav" class="navbar-nav ml-auto align-items-center">
                     <li class="nav-item active">
-                      <a class="page-scroll" href="#home">Home</a>
+                      <a class="page-scroll" href="#home" data-i18n="home"
+                        >Home</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#why">Why</a>
+                      <a class="page-scroll" href="#why" data-i18n="why">Why</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#products">Products</a>
+                      <a
+                        class="page-scroll"
+                        href="#products"
+                        data-i18n="products"
+                        >Products</a
+                      >
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#download">Download</a>
+                      <a
+                        class="page-scroll"
+                        href="#download"
+                        data-i18n="download"
+                        >Download</a
+                      >
                     </li>
-                    <div class="dropdown">
+                    <!-- <div class="dropdown">
                       <button
                         class="btn btn-secondary dropdown-toggle ml-4 lang-custom"
                         type="button"
@@ -130,11 +142,16 @@
                         class="dropdown-menu"
                         aria-labelledby="dropdownMenuButton"
                       >
-                        <button class="dropdown-item btn-en" >English</button>
-                        <button class="dropdown-item btn-ar" >العربية</button>
-                        
+                        <button class="dropdown-item btn-en">English</button>
+                        <button class="dropdown-item btn-ar">العربية</button>
                       </div>
-                    </div>
+                    </div> -->
+                    <select class="select-lang" aria-label="Default select example">
+                      <option value="en" selected data-i18n="english">
+                        English
+                      </option>
+                      <option value="ar" data-i18n="arabic">Arabic</option>
+                    </select>
                   </ul>
                 </div>
 
@@ -699,24 +716,10 @@
     <script src="assets/js/scrolling-nav.js"></script>
 
     <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" type="module"></script>
     <!-- ======== Swiper ===== -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
-      let btnArabic = document.querySelector(".btn-ar");
-      let btnEnglish = document.querySelector(".btn-en");
-
-      btnArabic.addEventListener("click", function () {
-        document.getElementsByTagName("body")[0].style.direction = "rtl";
-        document.getElementsByTagName("body")[0].style.fontFamily =
-          "'Cairo', sans-serif";
-      });
-      btnEnglish.addEventListener("click", function () {
-        document.getElementsByTagName("body")[0].style.direction = "ltr";
-        document.getElementsByTagName("body")[0].style.fontFamily =
-          "'Open Sans', sans-serif";
-      });
-
       const mql = window.matchMedia("(max-width: 1000px)");
       // console.log("mql",mql)
       // mql.addEventListener("change", (e) => {

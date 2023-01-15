@@ -19,11 +19,11 @@
 /*===========================
       01.COMMON css 
 ===========================*/
-/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap'); */
 :root {
   --main-green-color: #3cb34d;
   --main-green-color-hover: #3d8d47;
-} */
+}
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700&display=swap");
 body {
@@ -605,6 +605,7 @@ p {
 ===========================*/
 /*===== NAVBAR =====*/
 .navbar-area {
+  direction: ltr !important;
   position: absolute;
   top: 0;
   left: 0;
@@ -688,10 +689,10 @@ p {
   transform: rotate(135deg);
   top: -7px;
 }
-.lang-custom{
+.lang-custom {
   /* border: none; */
-    background: transparent !important;
-    color: #000!important;
+  background: transparent !important;
+  color: #000 !important;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -728,9 +729,9 @@ p {
   margin-left: 45px;
   position: relative;
 }
-.navbar-nav .nav-item:first-child {
+/* .navbar-nav .nav-item:first-child {
   margin-left: 0;
-}
+} */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .navbar-nav .nav-item {
     margin-left: 30px;
@@ -882,6 +883,14 @@ p {
   transform: rotate(-45deg);
   position: relative;
   top: -5px;
+}
+.select-lang {
+  background: transparent;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 20px;
+  outline: none;
+  color: #38424d;
 }
 
 /*===== HEADER HERO =====*/
@@ -1170,7 +1179,7 @@ p {
 }
 
 .header-image {
-  padding-top: 80px;
+  padding-top: 130px;
   position: relative;
   z-index: 5;
 }
@@ -1485,7 +1494,7 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 .download-content ul li a.app-store {
-  background-color: var(--main-green-color);
+  background-color: var(--main-green-color) !important;
   -webkit-box-shadow: 0px 4px 10px 0px rgba(8, 152, 231, 0.4);
   -moz-box-shadow: 0px 4px 10px 0px rgba(8, 152, 231, 0.4);
   box-shadow: 0px 4px 10px 0px rgba(8, 152, 231, 0.4);
@@ -1830,6 +1839,7 @@ p {
 .about-area .swiper-div {
   padding: 63px 0px;
   /* background-color: #222; */
+  direction: ltr !important;
 }
 .about-area .swiper-div .swiper {
   padding: 5px 0;
