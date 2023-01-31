@@ -1662,7 +1662,7 @@ p {
 }
 .footer-area .footer-shape.shape-8 {
   top: 30px;
-  right: -45px;
+  right: 0px !important;
 }
 .footer-area .logo {
   max-width: 200px;
@@ -1719,9 +1719,11 @@ p {
 }
 
 .footer-link-wrapper {
-  width: 50%;
+  width: 100%;
 }
-
+.text-align-start{
+  text-align: start;
+}
 .footer-contact .contact-list li {
   margin-top: 20px;
 }
@@ -1793,10 +1795,42 @@ p {
   transition: all 0.3s ease-out 0s;
   display: none;
 }
-.back-to-top:hover {
+.back-to-top:hover ,
+.whatsapp-fix:hover{
   background-color: var(--main-green-color-hover);
   color: #fff;
 }
+.whatsapp-fix {
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  z-index: 99;
+  background: var(--main-green-color);
+  height: 40px;
+  color: #fff;
+  width: 40px;
+  border-radius: 5px;
+
+}
+.whatsapp-fix .whatsapp-fix-div{
+  font-size: 20px;
+  color: #fff;
+  width: 100%;
+  
+  background: var(--main-green-color);
+
+  line-height: 40px;
+  border-radius: 5px;
+  background-size: 200%;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+ 
+}
+
 /* ===== Swiper ===== */
 .swiper {
   width: 100%;
